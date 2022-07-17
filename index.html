@@ -71,7 +71,10 @@
                   id="first"
                   name="first"
                   required minlength="2"
+                  oninvalid="this.setCustomValidity('Wow')" oninput="setCustomValidity('')"
                 /><br>
+                <!-- Le message d'erreur--> 
+               <span class="invidForm s1">Remplissez la ligne correctement.</span>
               </div>
               <div
                 class="formData">
@@ -83,6 +86,7 @@
                   name="last"
                   required minlength="2"
                 /><br>
+                <span class="invidForm s2">Remplissez la ligne correctement.</span>
               </div>
               <div
                 class="formData">
@@ -94,6 +98,7 @@
                   name="email" 
                   required 
                 /><br>
+                <span class="invidForm s3">Remplissez la ligne correctement.</span>
               </div>
               <div
                 class="formData">
@@ -105,11 +110,13 @@
                   name="birthdate"
                   required
                 /><br>
+                <span class="invidForm s4">Remplissez la ligne correctement.</span>
               </div>
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
+                <span class="invidForm s5">Remplissez la ligne correctement.</span>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
@@ -182,6 +189,7 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
+                <span class="invidForm s6">Choisissez la ville.</span>
               </div>
 
               <div
@@ -198,6 +206,7 @@
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
+                <span class="invidForm s7">Cochez!</span>
                 <input class="checkbox-input" type="checkbox" id="checkbox2"  />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
