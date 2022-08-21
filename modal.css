@@ -254,6 +254,10 @@ input {
     display: none;
 } 
 
+.formData.error .invidForm{
+  display: block;
+}
+
 .text-control:focus:invalid{
   border: 2px solid red;
   content: 'error'

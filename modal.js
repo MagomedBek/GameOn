@@ -24,9 +24,9 @@ const formData = document.querySelectorAll(".formData");
 const close = document.querySelector(".close");
 const submit = document.querySelector(".btn-submit");
 const body =document.querySelector(".modal-body");
-const el = document.querySelectorAll('.formData');
+const form = document.querySelectorAll('.formData');
 const msg = document.querySelectorAll('.invidForm')
-
+let n = 0;
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -51,12 +51,21 @@ function closeModal() {
 // Validation
 function validModal() {
   document.querySelector('#reserve input[type="submit"]' ).addEventListener("click", 
-  (e) => {
+  (event) => {
     
-    e.preventDefault();
+    event.preventDefault();
     
-    let valid = document.querySelector('#reserve').reportValidity();
-    
+    let valid = true;
+    document.querySelectorAll('.formData input, .formData textarea ').forEach(field =>{
+      field.closest('.formData').classList.remove('error');
+      let check = field.checkValidity();
+      valid &= check;
+      
+      if(!check){
+        field.closest('.formData').classList.add('error');
+        field.closest('.formData').querySelector('.invidForm').innerHTML = field.validationMessage;
+      }
+    })
       if(valid)
       {
         // form Apres la validation 
@@ -65,32 +74,9 @@ function validModal() {
         document.querySelector('.validation').addEventListener('click',closeModal)
         
       }
-      else {
-        //les champs non remplies
-        let n = 0;
-        el.forEach(query => {
-          if(!query.required){
-            msg[n].style.display ='block';
-            
 
-          }else{
-            msg[n].style.display ='none';
-            n++;
-            
-          }
-
-          
-         });
-        
-
-
-        
-      }
   })
   
 }
-function resetListener(){
-  document.querySelector('#reserve input[type="submit"]' ).removeEventListener("click",(e)=>{})
 
-}
 
