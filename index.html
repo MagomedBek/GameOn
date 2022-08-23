@@ -93,10 +93,10 @@
                 <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
-                  type="email"
+                  type="text"
                   id="email"
                   name="email" 
-                  required 
+                  required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
                 /><br>
                 <span class="invidForm s3">Remplissez la ligne correctement.</span>
               </div>
@@ -201,12 +201,16 @@
                   checked
                   required
                 />
-                <label class="checkbox2-label" for="checkbox1" >
+                <label class="checkbox2-label" for="checkbox1"  >
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
                 <span class="invidForm s7">Cochez!</span>
+                </div>
+                <div class = "formData">
+
+                
                 <input class="checkbox-input" type="checkbox" id="checkbox2"  />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>

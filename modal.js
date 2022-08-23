@@ -35,7 +35,7 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 close.addEventListener("click", closeModal); 
 
 //valid event
-submit.addEventListener("click", validModal);
+//submit.addEventListener("click", validModal);
 
 // launch modal form
 function launchModal() {
